@@ -1,0 +1,20 @@
+﻿@page
+@model SupermarketWEB.Pages.Pay_Mode.CreateModel
+@{
+    ViewData["Title"]= "Create";
+}
+
+<h1>Create Pay Mode</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="PayMode.Name"></label>
+        <input asp-for="PayMode.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PayMode.Observation"></label>
+        <input asp-for="PayMode.Observation" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+</form>
