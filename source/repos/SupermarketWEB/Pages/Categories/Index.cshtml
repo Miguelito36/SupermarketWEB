@@ -6,10 +6,10 @@
 <h1>Index Categories</h1>
 
 <p>
-	<a asp-page="Create" class="btn btn-success"></a>
+	<a asp-page="Create" class="btn btn-success">Create New</a>
 </p>
 
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<th>
@@ -32,8 +32,8 @@
 					@Html.DisplayFor(modelItem => item.Description)
 				</td>
 				<td>
+					<a asp-pages="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
 					<a asp-pages="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-					<a asp-pages="./Edit" asp-route.id="@item.Id" class="btn btn-warning">Edit</a>
 				</td>
 			</tr>
 		}

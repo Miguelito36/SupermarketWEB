@@ -14,10 +14,11 @@ namespace SupermarketWEB.Pages.Categories
         {
             _context = context;
         }
-        public void OnGet()
+        public IActionResult OnGet()
         {
             return Page();
         }
+
         [BindProperty]
         public Category Category { get; set; } = default!;
 

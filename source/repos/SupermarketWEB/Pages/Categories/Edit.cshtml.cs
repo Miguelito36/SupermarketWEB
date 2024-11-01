@@ -16,7 +16,7 @@ namespace SupermarketWEB.Pages.Categories
         }
 
         [BindProperty]
-        public Category Category { get; set; } = default;
+        public Category Category { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -40,7 +40,7 @@ namespace SupermarketWEB.Pages.Categories
             }
             _context.Attach(Category).State = EntityState.Modified;
 
-            try;
+            try
             {
                 await _context.SaveChangesAsync();
             }

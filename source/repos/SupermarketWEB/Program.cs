@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using SupermarketWEB.Data;
 
@@ -17,6 +16,13 @@ public class Program
         );
 
         var app = builder.Build();
+
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+        app.UseRouting();
+        app.UseAuthorization();
+        app.MapRazorPages();
+        app.Run();
     }
 }
 

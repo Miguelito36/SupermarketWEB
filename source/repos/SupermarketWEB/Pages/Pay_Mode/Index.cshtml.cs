@@ -1,10 +1,10 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SupermarketWEB.Data;
 using SupermarketWEB.Models;
 
-
-namespace SupermarketWEB.Pages.Categories
+namespace SupermarketWEB.Pages.Pay_Mode
 {
     public class IndexModel : PageModel
     {
@@ -15,14 +15,12 @@ namespace SupermarketWEB.Pages.Categories
             _context = context;
         }
 
-        public IList<Category> Categories { get; set; } = default!;
+        public IList<Pay_Mode> PayModes { get; set; } = new List<Pay_Mode>();
 
         public async Task OnGetAsync()
         {
-            if (_context.Categories != null)
-            {
-                Categories = await _context.Categories.ToListAsync();
-            }
+            PayModes = await _context.PayModes.ToListAsync();
         }
-    }    
+    }
+
 }
