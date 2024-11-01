@@ -1,0 +1,18 @@
+﻿@page
+@model SupermarketWEB.Pages.Pay_Mode.DeleteModel
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<h1>Delete Pay Mode</h1>
+
+<h3>Are you sure you want to delete this item?</h3>
+<div>
+    <h4>@Model.PayMode.Name</h4>
+    <p>@Model.PayMode.Observation</p>
+</div>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+</form>

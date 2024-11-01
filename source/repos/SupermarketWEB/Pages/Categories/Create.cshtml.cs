@@ -24,10 +24,15 @@ namespace SupermarketWEB.Pages.Categories
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if(!ModelState.IsValid || _context.Categories == null || Category == null)
+            if (!ModelState.IsValid || _context.Categories == null || Category == null)
             {
-				return Page();
-			}
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
+                return Page();
+            }
 
             _context.Categories.Add(Category);
             await _context.SaveChangesAsync();
