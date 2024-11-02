@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SupermarketWEB.Data;
+using SupermarketWEB.Models;
 
 namespace SupermarketWEB.Pages.Pay_Mode
 {
@@ -15,7 +16,7 @@ namespace SupermarketWEB.Pages.Pay_Mode
         }
 
         [BindProperty]
-        public Pay_Mode PayMode { get; set; }
+        public PayMode PayMode { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int id)
         {

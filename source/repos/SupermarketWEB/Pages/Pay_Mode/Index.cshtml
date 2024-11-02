@@ -8,8 +8,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Observation</th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.PayModes[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.PayModes[0].Observation)
+            </th>
             <th>Actions</th>
         </tr>
     </thead>

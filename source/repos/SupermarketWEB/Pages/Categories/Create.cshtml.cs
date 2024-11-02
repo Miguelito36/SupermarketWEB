@@ -26,7 +26,7 @@ namespace SupermarketWEB.Pages.Categories
         {
             if (!ModelState.IsValid || _context.Categories == null || Category == null)
             {
-                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                var errors = ModelState.Values.SelectMany(m => m.Errors);
                 foreach (var error in errors)
                 {
                     Console.WriteLine(error.ErrorMessage);
